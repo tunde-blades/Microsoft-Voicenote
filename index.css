@@ -178,11 +178,14 @@
       font-size: 15px;
       cursor: pointer;
     }
+a{
 
-    .sign_in {
       text-decoration: none;
+      color: white;
+}
+    .sign_in {
       width: 25%;
-      padding: 8px 30px 8px 30px;
+      padding: 5px;
       background-color: rgb(31, 112, 204);
       color: #fff;
       border: none;

