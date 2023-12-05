@@ -94,7 +94,7 @@
     input::placeholder {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 15px;
-        position: absolute;
+        position: relative;
     }
 
     .no_acc {
