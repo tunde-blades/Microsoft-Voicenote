@@ -180,8 +180,9 @@
     }
 
     .sign_in {
+      text-decoration: none;
       width: 25%;
-      padding: 5px;
+      padding: 8px 30px 8px 30px;
       background-color: rgb(31, 112, 204);
       color: #fff;
       border: none;
